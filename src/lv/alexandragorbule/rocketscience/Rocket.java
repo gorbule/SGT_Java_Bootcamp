@@ -11,9 +11,11 @@ public class Rocket {
     private int weight;
     private int height;
     private Engine engine;
+    private static int rocketCounter;
 
     //Constructors
     public Rocket() {
+        addRocket();
     }
 
     /**
@@ -31,6 +33,17 @@ public class Rocket {
         this.weight = weight;
         this.height = height;
         this.engine = engine;
+        addRocket();
+    }
+
+    //static method countRockets
+    static int countRockets() {
+        return rocketCounter;
+    }
+
+    //static method - will increase rocketCounter + 1
+    static void addRocket() {
+        rocketCounter++;
     }
 
     //Getters && Setters
