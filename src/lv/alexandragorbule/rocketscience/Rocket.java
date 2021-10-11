@@ -6,7 +6,7 @@ package lv.alexandragorbule.rocketscience;
 
 public class Rocket {
 
-    private String name;
+    private String name = "Banana rocket";
     private String color;
     private int weight;
     private int height;
@@ -16,6 +16,15 @@ public class Rocket {
     //Constructors
     public Rocket() {
         addRocket();
+    }
+
+    //Print rocket data
+    public void printRocketData() {
+        System.out.println("Rocket" +
+                " name: " + this.name + ", " +
+                " color: " + this.color + ", " +
+                " weight: " + this.weight + ", " +
+                " height: " + this.height);
     }
 
     /**
@@ -35,6 +44,10 @@ public class Rocket {
         this.engine = engine;
         addRocket();
     }
+    @Override
+    protected void finalize() {
+        System.out.println("The rocket " + this.name + " is already destroyed");
+    }
 
     //static method countRockets
     static int countRockets() {
@@ -42,8 +55,29 @@ public class Rocket {
     }
 
     //static method - will increase rocketCounter + 1
-    static void addRocket() {
+    private static void addRocket() {
         rocketCounter++;
+    }
+
+    /**
+     *
+     * @param rocket
+     * @param newName
+     */
+    //Rename rocket method
+    public static void renameRocket(Rocket rocket, String newName) {
+        rocket.setName(newName);
+    }
+
+    /**
+     *
+     * @param weight
+     * @param newWeight
+     */
+    //Change rocket weight method
+    public static void changeTheWeight (int weight, int newWeight) {
+        weight = newWeight;
+        System.out.println("Weight was changed locally to: " + weight);
     }
 
     //Getters && Setters
