@@ -10,16 +10,27 @@ public class Rocket {
     private String color;
     private int weight;
     private int height;
+    private Engine engine;
 
     //Constructors
     public Rocket() {
     }
 
-    public Rocket(String name, String color, int weight, int height) {
+    /**
+     *
+     * @param name
+     * @param color
+     * @param weight
+     * @param height
+     * @param engine
+     */
+
+    public Rocket(String name, String color, int weight, int height, Engine engine) {
         this.name = name;
         this.color = color;
         this.weight = weight;
         this.height = height;
+        this.engine = engine;
     }
 
     //Getters && Setters
@@ -53,5 +64,13 @@ public class Rocket {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 }
