@@ -4,33 +4,56 @@ public class HomeWorkTask1 {
 
     public static void main(String[] args) {
 
-        // myAtoi(String s) -  function, which converts a string to an integer
+        String str = "this is not";
+        System.out.println("Input: " + str);
 
-        String str = "ab +12 n-dh78";
-
-        //1. Read in and ignore any leading whitespace.
+        //Reading in and ignoring any leading whitespace.
         String noSpaceStr = str.replaceAll("\\s", "");
-        //System.out.println(noSpaceStr);
 
-        //2.Check if result will be positive/negative number
+        //Checking if result will be positive/negative number
         String numberOnly = noSpaceStr.replaceAll("[^0-9,+,-]", "");
-        //System.out.println(numberOnly);
-
         char[] array = new char[numberOnly.length()];
-        for (int i = 0; i < chr.length; i++) {
-            if (
+        for (int k = 0; k < numberOnly.length(); k++) {
+            array[k] = numberOnly.charAt(k);
         }
-        int sLenght = s.length();
-        char[] chr = new char[sLenght];
-        // Copy character by character into array
-        for (int i = 0; i < sLenght; i++) {
-            chr[i] = s.charAt(i);
-            //System.out.println(chr[i]);
-         }
+        char sign = ' ';
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] == '+') {
+                sign = '+';
+            } else if (array[j] == '-'){
+                sign = '-';
+            } else {
+                sign = '+';
+            }
+            break;
+        }
+        //Parsing String to Integer
+        String resultStr = noSpaceStr.replaceAll("[^0-9]", "");
+        int resultInt = Integer.parseInt(resultStr);
+
+        if (sign == '-') {
+            resultInt = resultInt*-1;
+        } else {}
+
+        //Mathematical comparing & Result output
+        int minimalNum = Integer.MIN_VALUE;
+        int maximalNum = Integer.MAX_VALUE;
+
+        if (resultInt <= minimalNum) {
+            System.out.println("Output is: " + minimalNum);
+        } else if (resultInt >= maximalNum) {
+            System.out.println("Output is: " + maximalNum);
+        } else {
+            System.out.println("Output is: " + resultInt);
+        }
 
 
     }
 
+    /**
+     *myAtoi(String s) -  function, method, which converts a string to an integer
+     * @param s
+     */
     static void myAtoi(String s) {
 
     }
