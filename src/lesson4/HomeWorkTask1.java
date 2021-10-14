@@ -4,7 +4,21 @@ public class HomeWorkTask1 {
 
     public static void main(String[] args) {
 
-        String str = "999999-99999";
+        String str = "01+ anhsj8741";
+        myAtoi(str);
+
+        String str2 = "-548+ad-002378549521425";
+        myAtoi(str2);
+
+        String str3 = "Hello there!";
+        myAtoi(str3);
+
+
+    }
+
+        public static void myAtoi(String str) {
+
+        //String str = "999999-99999";
         System.out.println("Input: " + str);
 
         if (str.matches(".*\\d.*")){
@@ -52,14 +66,12 @@ public class HomeWorkTask1 {
         } else {
             System.out.println("Sorry! In your string no one digit!");
         }
+            System.out.println();
     }
 
     /**
      *myAtoi(String s) -  function, method, which converts a string to an integer
      * @param s
      */
-    static void myAtoi(String s) {
-
-    }
 
 }
