@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class FizzBuzz {
 
+    /**FizzBuzz task solution.
+     * It is a short program that prints each number from 1 to inputted number.
+     * For each multiple of 3, program will print "Fizz" instead of the number.
+     * For each multiple of 5, program will print "Buzz".
+     * For numbers which are multiples of both 3 and 5, program will print "FizzBuzz".
+     * @param args
+     */
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
