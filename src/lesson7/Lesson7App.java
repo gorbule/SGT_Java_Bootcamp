@@ -38,6 +38,23 @@ public class Lesson7App {
         printInfoAboutSpaceShip(spaceShip);
         printInfoAboutSpaceShip(peopleSpaceShip); //SpaceShip + People
 
+        //Prints just "Cargo Added"
+        SpaceShip spaceShip2 = new SpaceShip();
+        spaceShip2.addCargo();
+
+        SpaceShip spaceShip3 = new PeopleSpaceShip();
+        spaceShip3.addCargo();
+
+        //UPCasting
+        SpaceShip castedSpaceShip = (SpaceShip) peopleSpaceShip;
+
+        //DOWNCasting
+        //Is NOT POSSIBLE to use
+            //PeopleSpaceShip castedPeopleSpaceShip = (PeopleSpaceShip) spaceShip;
+                    //to avoid an error - we need to cast spaceShip! (!!! sk. iekavas)
+            //castedPeopleSpaceShip.getNamesOfPeople();
+                    //no error in the compiler, error will be on Runtime. There is missing method.
+
     }
 
 

@@ -16,7 +16,6 @@ public class SpaceShip {
                 ", cargoSpace=" + cargoSpace +
                 '}';
     }
-
     public void addCargo() {
         System.out.println("Cargo Added");
     }
