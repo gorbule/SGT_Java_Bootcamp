@@ -9,6 +9,22 @@ public class PeopleSpaceShip extends SpaceShip {
     private int numberOfPeople;
     private ArrayList<String> namesOfPeople = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "PeopleSpaceShip{" +
+                "numberOfPeople=" + numberOfPeople +
+                ", namesOfPeople=" + namesOfPeople +
+                ", engine=" + engine +
+                ", name='" + name + '\'' +
+                ", cargoSpace=" + cargoSpace +
+                '}';
+    }
+
+    @Override
+    public void addCargo() {
+        System.out.println("We have overriden method inside PeopleSpaceShip");
+    }
+
     //Non argument constructor
     public PeopleSpaceShip() {
     }

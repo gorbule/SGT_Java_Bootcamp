@@ -8,6 +8,26 @@ public class SpaceShip {
     String name = "";
     int cargoSpace = 0;
 
+    @Override
+    public String toString() {
+        return "SpaceShip{" +
+                "engine=" + engine +
+                ", name='" + name + '\'' +
+                ", cargoSpace=" + cargoSpace +
+                '}';
+    }
+
+    public void addCargo() {
+        System.out.println("Cargo Added");
+    }
+
+    public int addCargo(int cargo) {
+        this.cargoSpace += cargo;
+        return this.cargoSpace;
+    }
+
+
+
     public SpaceShip() {
     }
 
