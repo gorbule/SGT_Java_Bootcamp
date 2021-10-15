@@ -10,5 +10,8 @@ public class WrapperClasses {
 
     }
 
+    private int findMinimum(int a, int b) {
+        return Integer.min(a, b);
+    }
 
 }
