@@ -2,6 +2,11 @@ package lesson4;
 
 public class HomeWorkTask1 {
 
+    /**
+     * Main method to check myAtoi function work with different examples
+     * @param args
+     */
+
     public static void main(String[] args) {
 
         String str = "01+ anhsj8741";
@@ -13,12 +18,21 @@ public class HomeWorkTask1 {
         String str3 = "Hello there!";
         myAtoi(str3);
 
+        String str4 = "999999-99999";
+        myAtoi(str4);
+
+        String str5 = "lk+12547-32   548 kjd1254d7*";
+        myAtoi(str5);
 
     }
 
+    /**
+     * myAtoi(String s) -  function, method, which converts a string to an integer
+     * @param str - String (can consist of letters, numbers, spaces, special characters)
+     */
+
         public static void myAtoi(String str) {
 
-        //String str = "999999-99999";
         System.out.println("Input: " + str);
 
         if (str.matches(".*\\d.*")){
@@ -57,21 +71,15 @@ public class HomeWorkTask1 {
             int maximalNum = Integer.MAX_VALUE;
 
             if (resultInt <= minimalNum) {
-                System.out.println("Output is: " + minimalNum);
+                System.out.println("Output: " + minimalNum);
             } else if (resultInt >= maximalNum) {
-                System.out.println("Output is: " + maximalNum);
+                System.out.println("Output: " + maximalNum);
             } else {
-                System.out.println("Output is: " + resultInt);
+                System.out.println("Output: " + resultInt);
             }
         } else {
-            System.out.println("Sorry! In your string no one digit!");
+            System.out.println("Sorry! There is no one digit!");
         }
             System.out.println();
     }
-
-    /**
-     *myAtoi(String s) -  function, method, which converts a string to an integer
-     * @param s
-     */
-
 }
