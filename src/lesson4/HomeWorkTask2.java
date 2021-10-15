@@ -2,6 +2,11 @@ package lesson4;
 
 public class HomeWorkTask2 {
 
+    /**
+     * Main method to test numbersToRoman function
+     * @param args
+     */
+
     public static void main(String[] args) {
         int number1 = 3;
         numbersToRoman(number1);
@@ -22,6 +27,10 @@ public class HomeWorkTask2 {
         numbersToRoman(number6);
     }
 
+    /**
+     * Function converts an integer to a roman numeral
+     * @param number
+     */
     public static void numbersToRoman(int number) {
         System.out.println("Input: " + number);
         String roman = "";
