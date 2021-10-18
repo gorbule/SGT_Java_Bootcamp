@@ -1,10 +1,8 @@
-package lesson8.practice.task1;
+package lesson8.practice.task1and2;
 
 public class ChildClass extends ParentClass{
 
-    String str1 = "";
-
-    public void printThisIsChildClass() {
+    public void printChild() {
         System.out.println("This is child class");
     }
 }

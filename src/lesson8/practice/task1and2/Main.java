@@ -1,4 +1,4 @@
-package lesson8.practice.task1;
+package lesson8.practice.task1and2;
 
 public class Main {
     /**
@@ -13,13 +13,18 @@ public class Main {
 
         //--->1 method of parent class by object of parent class
         ParentClass parentClass = new ParentClass();
-        parentClass.printThisIsParentClass();
+        parentClass.printParent();
 
         //--->2 method of child class by object of child class
         ChildClass childClass = new ChildClass();
-        childClass.printThisIsChildClass();
+        childClass.printChild();
 
         //--->3 method of parent class by object of child class
-        childClass.printThisIsParentClass();
+        childClass.printParent();
+
+        //--->4 We can not use private method without another method or constructor
+        //parentClass.printSmthPrivate();
+        //childClass.printSmthPrivate();
+
     }
 }
