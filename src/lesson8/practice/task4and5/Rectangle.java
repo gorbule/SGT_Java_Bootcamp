@@ -1,4 +1,4 @@
-package lesson8.practice.task4;
+package lesson8.practice.task4and5;
 
 public class Rectangle {
 
