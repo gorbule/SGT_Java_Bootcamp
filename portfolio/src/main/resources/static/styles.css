@@ -3,13 +3,11 @@ i {
 }
 
 #unique-element {
-    background-color: pink;
+    background-color: rgba(255, 0, 0, 0.4);
 }
 
 .third-class {
     color: red;
     background-color: yellow;
     font-size: 25;
-    -ms- transform: skewY(20deg);
-    transform: skewY(20deg);
     }
