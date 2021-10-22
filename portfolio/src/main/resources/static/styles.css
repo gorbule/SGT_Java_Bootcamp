@@ -1,0 +1,15 @@
+i {
+    color: purple;
+}
+
+#unique-element {
+    background-color: pink;
+}
+
+.third-class {
+    color: red;
+    background-color: yellow;
+    font-size: 25;
+    -ms- transform: skewY(20deg);
+    transform: skewY(20deg);
+    }
