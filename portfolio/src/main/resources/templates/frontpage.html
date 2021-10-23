@@ -9,7 +9,7 @@
 
 <table id="BasicInfo" width="100%" >
     <tr>
-        <td align="left">
+        <td style="align=left; width: 600px">
             <h1><p th:text="${myName}"></p></h1>
             <h2>Basic information: </h2>
             Date of birth: 18/04/1999 </br>
@@ -20,13 +20,20 @@
             Daugavpils Secondary School No. 10 </br>
             <b>Lower post-secondary vocational education 2014-2018</b> </br>
             Vocational Education Competence Centre "Riga Technical College" </br>
-            <i>Railway transport and organization of transportation</i>
+            <i>Railway transport and organization of transportation</i></br>
             <b> Associate Degree 2018-2021</b></br>
             <i>Information and Communication Technologies: Computer network and computer system administrator</i> </br>
 
         </td>
-        <td align="center">
-            <img id="my-photo" width="200" src="myphoto.jpg"/> </br>
+        <td style="height: inherit; width: 400px">
+            <div class="container" style="height: 100%; display: flex; justify-content: center;">
+            <img id="my-photo" alt="Avatar" class="image" style="width:300" src="myphoto.jpg"/>
+                <div class="middle">
+                    <div class="text"><a href="https://www.facebook.com/profile.php?id=100006451214274">Alexandra</a>
+                    </div>
+                </div>
+            </div>
+
         </td>
     </tr>
 </table>
