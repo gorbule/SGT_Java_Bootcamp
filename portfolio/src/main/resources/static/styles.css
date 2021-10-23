@@ -1,13 +1,38 @@
-i {
-    color: purple;
+body {
+  background-color: #F0E2E2;
+}
+h1 {
+     color: #330033;
 }
 
-#unique-element {
+h3 {
+   color: #330033;
+}
+
+#my-photo {
+    position: relative;
+}
+
+#my-projects {
+    border: 1px solid #330033;
+    }
+
+#BasicInfo {
+    border: 1px solid #330033;
+}
+
+footer {
+    text-align: right;
+
+}
+
+/*#unique-element {
     background-color: rgba(255, 0, 0, 0.4);
-}
+}*/
 
+/*
 .third-class {
     color: red;
     background-color: yellow;
     font-size: 25;
-    }
+    }*/

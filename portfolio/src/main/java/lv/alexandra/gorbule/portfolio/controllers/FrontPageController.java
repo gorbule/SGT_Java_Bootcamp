@@ -10,7 +10,7 @@ public class FrontPageController {
 
     @GetMapping (value = "/frontpage")
     public String getFrontPage(Model model) {
-        model.addAttribute("myName", "Alexandra");
+        model.addAttribute("myName", "Alexandra Gorbule");
         return "frontpage.html";
     }
 

@@ -1,6 +1,6 @@
 package lesson9;
 
-public static class Utilities {
+public class Utilities {
 
     public static class Delete {
         public void delete(String filename) {
