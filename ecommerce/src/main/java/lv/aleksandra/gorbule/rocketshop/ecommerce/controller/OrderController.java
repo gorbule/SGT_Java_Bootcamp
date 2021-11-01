@@ -1,11 +1,13 @@
 package lv.aleksandra.gorbule.rocketshop.ecommerce.controller;
 
-import com.sun.istack.NotNull;
 import lv.aleksandra.gorbule.rocketshop.ecommerce.dto.OrderProductDto;
+import lv.aleksandra.gorbule.rocketshop.ecommerce.model.OrderStatus;
 import lv.aleksandra.gorbule.rocketshop.ecommerce.repository.Order;
 import lv.aleksandra.gorbule.rocketshop.ecommerce.repository.OrderProduct;
+import lv.aleksandra.gorbule.rocketshop.ecommerce.service.OrderProductService;
 import lv.aleksandra.gorbule.rocketshop.ecommerce.service.OrderService;
 import lv.aleksandra.gorbule.rocketshop.ecommerce.service.ProductService;
+import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -26,8 +28,16 @@ public class OrderController {
     @Autowired
     ProductService productService;
 
+    @Autowired
     OrderService orderService;
+
+    @Autowired
     OrderProductService orderProductService;
+
+    @GetMapping
+    public ResponseEntity<List<Order>>getAllOrders() {
+        return (ResponseEntity<List<Order>>) this.orderService.getAllOrders();
+    }
 
     public OrderController(ProductService productService, OrderService orderService, OrderProductService orderProductService) {
         this.productService = productService;
@@ -35,15 +45,16 @@ public class OrderController {
         this.orderProductService = orderProductService;
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public @NotNull
-    Iterable<Order> list() {
-        return this.orderService.getAllOrders();
-    }
+
+//    @GetMapping
+//    @ResponseStatus(HttpStatus.OK)
+//    public @NotNull
+//    Iterable<Order> list() {
+//        return this.orderService.getAllOrders();
+//    }
 
     @PostMapping
-    public ResponseEntity<Order> create(@RequestBody OrderForm form) {
+    public ResponseEntity<Order> create(@RequestBody OrderForm form) throws Exception {
         List<OrderProductDto> formDtos = form.getProductOrders();
         validateProductsExistence(formDtos);
         Order order = new Order();
@@ -71,12 +82,19 @@ public class OrderController {
         return new ResponseEntity<>(order, headers, HttpStatus.CREATED);
     }
 
-    private void validateProductsExistence(List<OrderProductDto> orderProducts) {
+    private void validateProductsExistence(List<OrderProductDto> orderProducts) throws Exception{
         List<OrderProductDto> list = orderProducts
                 .stream()
-                .filter(op -> Objects.isNull(productService.getProduct(op
-                        .getProduct()
-                        .getId())))
+                .filter(op -> {
+                    try {
+                        return Objects.isNull(productService.getProduct(op
+                                .getProduct()
+                                .getId()));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return true;
+                })
                 .collect(Collectors.toList());
 
         if (!CollectionUtils.isEmpty(list)) {
