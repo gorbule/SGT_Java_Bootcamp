@@ -1,15 +1,19 @@
 package lv.aleksandra.gorbule.rocketshop.ecommerce.service;
 
 import lv.aleksandra.gorbule.rocketshop.ecommerce.repository.Product;
+import lv.aleksandra.gorbule.rocketshop.ecommerce.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
 @Service
 @Transactional
-public class ProductServiceImpl {
+public class ProductServiceImpl implements ProductService {
 
     // productRepository constructor injection
+    @Autowired
+    ProductRepository productRepository;
 
     @Override
     public Iterable<Product> getAllProducts() {
@@ -17,7 +21,7 @@ public class ProductServiceImpl {
     }
 
     @Override
-    public Product getProduct(long id) {
+    public Product getProduct(long id) throws Exception {
         return productRepository
                 .findById(id)
                 .orElseThrow(() -> new Exception("Product not found"));

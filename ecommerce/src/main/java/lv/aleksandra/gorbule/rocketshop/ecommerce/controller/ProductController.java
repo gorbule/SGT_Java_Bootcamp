@@ -1,7 +1,7 @@
 package lv.aleksandra.gorbule.rocketshop.ecommerce.controller;
 
-import com.baeldung.ecommerce.model.Product;
-import com.baeldung.ecommerce.service.ProductService;
+import lv.aleksandra.gorbule.rocketshop.ecommerce.repository.Product;
+import lv.aleksandra.gorbule.rocketshop.ecommerce.service.ProductService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -11,7 +11,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Product name is required.")
+    @NotNull
     @Basic(optional = false)
     private String name;
 
@@ -19,8 +19,8 @@ public class Product {
 
     private String pictureUrl;
 
+    //Constructors
 
-    // all arguments constructor
     public Product() {
     }
 
