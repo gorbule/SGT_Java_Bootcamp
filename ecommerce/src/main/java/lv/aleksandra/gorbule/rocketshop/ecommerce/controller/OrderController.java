@@ -35,23 +35,9 @@ public class OrderController {
     OrderProductService orderProductService;
 
     @GetMapping
-    public ResponseEntity<List<Order>>getAllOrders() {
-        return (ResponseEntity<List<Order>>) this.orderService.getAllOrders();
+    public Iterable<Order> getAllOrders() {
+        return this.orderService.getAllOrders();
     }
-
-    public OrderController(ProductService productService, OrderService orderService, OrderProductService orderProductService) {
-        this.productService = productService;
-        this.orderService = orderService;
-        this.orderProductService = orderProductService;
-    }
-
-
-//    @GetMapping
-//    @ResponseStatus(HttpStatus.OK)
-//    public @NotNull
-//    Iterable<Order> list() {
-//        return this.orderService.getAllOrders();
-//    }
 
     @PostMapping
     public ResponseEntity<Order> create(@RequestBody OrderForm form) throws Exception {
@@ -69,6 +55,7 @@ public class OrderController {
         }
 
         order.setOrderProducts(orderProducts);
+
         this.orderService.update(order);
 
         String uri = ServletUriComponentsBuilder
@@ -82,23 +69,27 @@ public class OrderController {
         return new ResponseEntity<>(order, headers, HttpStatus.CREATED);
     }
 
-    private void validateProductsExistence(List<OrderProductDto> orderProducts) throws Exception{
-        List<OrderProductDto> list = orderProducts
-                .stream()
-                .filter(op -> {
-                    try {
-                        return Objects.isNull(productService.getProduct(op
-                                .getProduct()
-                                .getId()));
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    return true;
-                })
-                .collect(Collectors.toList());
+    private void validateProductsExistence(List<OrderProductDto> orderProducts)  {
+        try {
+            List<OrderProductDto> list = orderProducts
+                    .stream()
+                    .filter(op -> {
+                        try {
+                            return Objects.isNull(productService.getProduct(op
+                                    .getProduct()
+                                    .getId()));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        return false;
+                    })
+                    .collect(Collectors.toList());
 
-        if (!CollectionUtils.isEmpty(list)) {
-            new ResourceNotFoundException("Product not found");
+            if (!CollectionUtils.isEmpty(list)) {
+                new ResourceNotFoundException("Product not found");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 
@@ -114,4 +105,5 @@ public class OrderController {
             this.productOrders = productOrders;
         }
     }
+
 }

@@ -1,7 +1,5 @@
 package lv.aleksandra.gorbule.rocketshop.ecommerce.repository;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +9,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     @Basic(optional = false)
     private String name;
 
@@ -19,9 +16,11 @@ public class Product {
 
     private String pictureUrl;
 
-    //Constructors
-
     public Product() {
+    }
+
+    public Product(Long id) {
+        this.id = id;
     }
 
     public Product(Long id, String name, Double price, String pictureUrl) {
@@ -31,7 +30,6 @@ public class Product {
         this.pictureUrl = pictureUrl;
     }
 
-    // standard getters and setters
     public Long getId() {
         return id;
     }
