@@ -10,7 +10,7 @@ import { ProductOrders } from '../models/ProductOrders';
     styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-    orders: ProductOrders;
+    orders!: ProductOrders;
     total!: number;
     paid!: boolean;
     sub!: Subscription;

@@ -5,7 +5,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @Component({
     selector: 'app-ecommerce',
-    templateUrl: './ecommerce.component.html',
+    templateUrl: ['./ecommerce.component.html'],
     styleUrls: ['./ecommerce.component.css']
 })
 export class EcommerceComponent implements OnInit {
