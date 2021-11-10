@@ -18,6 +18,8 @@ public class IteratorsLesson20 {
             System.out.println(planetsIterator.next());
         }
 
+        System.out.println();
+
         //Ex2
         Set<String> birds = new TreeSet<String>();
         birds.add("Parrot");
@@ -29,5 +31,24 @@ public class IteratorsLesson20 {
         while (birdsIterator.hasNext()) {
             System.out.println(birdsIterator.next());
         }
+
+        System.out.println();
+
+        //Ex3 - Queue
+        Queue<String> lidl = new LinkedList<>();
+
+        lidl.add("A");
+        lidl.add("B");
+        lidl.add("C");
+        System.out.println(lidl);
+
+        Iterator lidlIterator = lidl.iterator();
+
+            //sort first
+            while (lidlIterator.hasNext()) {
+                System.out.println(lidlIterator.next());
+            }
+
+
     }
 }
