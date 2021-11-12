@@ -1,4 +1,4 @@
-package lesson20.collections;
+package lesson20and21.collections;
 
 import java.util.HashMap;
 import java.util.Map;
