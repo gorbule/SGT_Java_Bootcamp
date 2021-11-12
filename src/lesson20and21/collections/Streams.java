@@ -23,7 +23,8 @@ public class Streams {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(newFile));
-            writer.append("This is new line to append to the file!");
+            writer.append("This is new line to append to the file!"); //>
+            writer.append("Something new"); //>>
             writer.close();
         } catch ( IOException e) {
             System.out.println("File does not exist");
