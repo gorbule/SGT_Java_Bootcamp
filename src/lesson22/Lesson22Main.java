@@ -7,10 +7,13 @@ public class Lesson22Main {
         GenericClass<String> firstDate = new GenericClass<String>();
         firstDate.setBirthDate("1999-04-18");
         System.out.println(firstDate.getBirthDate());
+        firstDate.formatBirthDate("Some string");
 
         GenericClass<Date> secondDate = new GenericClass<>();
         secondDate.setBirthDate(new Date());
         System.out.println(secondDate.getBirthDate());
+        secondDate.formatBirthDate(new Date());
+
 
     }
 }
