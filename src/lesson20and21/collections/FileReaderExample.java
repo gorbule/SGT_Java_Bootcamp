@@ -10,8 +10,8 @@ public class FileReaderExample {
         int count = myPath.getNameCount();
         System.out.println(count);
 
-        while (myPath.iterator().hasNext()) {
-            System.out.println(myPath.iterator().next().getName());
-        }
+//        while (myPath.iterator().hasNext()) {
+//            System.out.println(myPath.iterator().next().getName());
+//        }
     }
 }
