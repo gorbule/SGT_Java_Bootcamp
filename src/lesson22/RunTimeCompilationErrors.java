@@ -14,14 +14,22 @@ public class RunTimeCompilationErrors {
 
 
         //RunTime Error
-        List muList = new ArrayList();
-        muList.add("Some text");
-        muList.add(new Float(1.45f));
+        List myList = new ArrayList();
+        myList.add("Some text");
+        myList.add(new Float(1.45f));
 
         //trying to cast
-        float var3 = (float) (muList.get(0));
+        float var3 = (float) (myList.get(0));
             //compiler does not show any error but there is runtime compilation error.
             //it is impossible to cast text to float !!!
+
+        List<String> myList2 = new ArrayList<>();
+        myList2.add("Something");
+        //myList2.add(40); ---> data type error
+
+        //impossible to cast STring to INT! Compilation error
+        //int someInt = (int) myList2.get(0);
+
 
     }
 }
