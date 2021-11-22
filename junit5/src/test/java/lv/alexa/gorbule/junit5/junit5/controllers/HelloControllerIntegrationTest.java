@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest
-class HelloControllerntegrationTest {
+class HelloControllerIntegrationTest {
 
     @Test
     void hello() {
