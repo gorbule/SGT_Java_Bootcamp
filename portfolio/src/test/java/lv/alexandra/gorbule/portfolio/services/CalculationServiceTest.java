@@ -3,9 +3,11 @@ package lv.alexandra.gorbule.portfolio.services;
 import lv.alexandra.gorbule.portfolio.models.SpaceObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class CalculationServiceTest {
 
     //Regular test. It's a Service. Don't use MVC
@@ -25,9 +27,6 @@ class CalculationServiceTest {
         so2.setCordX(1);
         so2.setCordY(2);
 
-        assert {
-                calculationService.calculateDistance(so1, so2) == 1;
-        }
-
+        assertEquals(calculationService.calculateDistance(so1, so2), 1);
     }
 }
