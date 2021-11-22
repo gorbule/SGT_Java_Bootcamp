@@ -1,4 +1,4 @@
-package com.alexa.gorbule.JUnit5;
+package lesson24.example2.JUnit5.src.main.java.com.alexa.gorbule.JUnit5;
 
 
 import java.util.Collection;

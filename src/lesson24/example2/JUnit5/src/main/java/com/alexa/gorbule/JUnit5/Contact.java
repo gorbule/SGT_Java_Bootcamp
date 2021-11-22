@@ -1,4 +1,4 @@
-package lesson24.example2;
+package lesson24.example2.JUnit5.src.main.java.com.alexa.gorbule.JUnit5;
 
 public class Contact {
     private String firstName;
@@ -15,12 +15,25 @@ public class Contact {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
     }
 
-    //Name should not be null!
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public void validateFirstName() {
         if (this.firstName.isBlank())
@@ -32,11 +45,8 @@ public class Contact {
             throw new RuntimeException("Last Name Cannot be null or empty");
     }
 
-
-    //Phone numbers input rules
-
     public void validatePhoneNumber() {
-        if (this.phoneNumber.isBlank()) {
+        if (this.phoneNumber.isBlank()){
             throw new RuntimeException("Phone Name Cannot be null or empty");
         }
 
