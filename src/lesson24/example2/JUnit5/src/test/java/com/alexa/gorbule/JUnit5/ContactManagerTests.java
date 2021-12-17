@@ -1,10 +1,10 @@
 package lesson24.example2.JUnit5.src.test.java.com.alexa.gorbule.JUnit5;
 
+import lesson24.example2.JUnit5.src.main.java.com.alexa.gorbule.JUnit5.ContactManager;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Arrays;
 import java.util.List;
